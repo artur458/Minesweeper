@@ -1,2 +1,2 @@
 # Minesweeper
-https://dpsturdio.itch.io/minesweeper-by-dpstudio
+[Play Game On itch.io](https://dpsturdio.itch.io/minesweeper-by-dpstudio)
