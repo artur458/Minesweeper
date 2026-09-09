@@ -17,7 +17,7 @@ public:
 	bool flags[24][25]{};
 	bool opened[24][25]{};
 
-	int startMines = 100;
+	int startMines = 50;
 	int currectMines;
 
 	bool gameOver = false;
@@ -25,8 +25,10 @@ public:
 	void Setup();
 	void GameLoop();
 
+private:
 	void CellButton(
 		int x, int y,
 		SDL_Renderer* renderer,
 		SDL_Texture* cellTexture);
+	void OpenCell(int x, int y);
 };

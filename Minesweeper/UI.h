@@ -5,7 +5,7 @@
 class UI
 {
 public:
-
+	SDL_Event event;
 	void DrawPanelOld(SDL_Renderer* renderer, float x, float y, float w, float h);
 	void DrawPanelOldWithTexture(SDL_Renderer* renderer, SDL_Texture* texture, SDL_FRect panelRect, SDL_FRect scrTextureRect);
 
@@ -15,6 +15,7 @@ public:
 		SDL_Renderer* renderer,
 		float x, float y, float w, float h,
 		SDL_Color BaseColor, SDL_Color SelectColor, SDL_Color PressColor);
+
 	bool isHover(float mouseX, float mouseY, const SDL_FRect& rect);
 private:
 };

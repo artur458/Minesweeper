@@ -102,7 +102,27 @@ void Game::GameLoop()
 		}
 	}
 }
+void Game::OpenCell(int x, int y)
+{
+    if (x < 0 || x >= 24 || y < 0 || y >= 24)
+        return;
 
+    if (opened[x][y] || flags[x][y])
+        return;
+
+    opened[x][y] = true;
+
+    if (grid[x][y] != 0)
+        return;
+
+    for (int i = -1; i <= 1; i++)
+    {
+        for (int j = -1; j <= 1; j++)
+        {
+            OpenCell(x + i, y + j);
+        }
+    }
+}
 void Game::CellButton(
     int x, int y,
     SDL_Renderer* renderer,
@@ -124,6 +144,7 @@ void Game::CellButton(
         if (buttons & SDL_BUTTON_RMASK)
         {
             flags[x][y] = !flags[x][y];
+            // Проверка победы
             if (flags[x][y] && grid[x][y] == -1) {
                 currectMines++;
             }
@@ -136,7 +157,10 @@ void Game::CellButton(
         }
         if (buttons & SDL_BUTTON_LMASK && !flags[x][y])
         {
-            opened[x][y] = true;
+			// Открытие всех соседних клеток, если текущая клетка пуста
+			OpenCell(x, y);
+
+            // Проверка проигрыша
             if (grid[x][y] == -1) {
                 for (int i = 0; i < 24; i++) {
                     for (int j = 0; j < 25; j++) {

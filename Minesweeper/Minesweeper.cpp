@@ -43,15 +43,36 @@ SDL_AppResult SDL_AppIterate(void* appstate) {
 	SDL_RenderClear(renderer);
 
 #pragma region UI
-	game.ui.Button(0, "Game", buttonFont, { 0, 0, 0, 255 }, renderer, 10, 10, 50, 20,
+	if (game.ui.Button(0, "Window", buttonFont, { 0, 0, 0, 255 }, renderer, 10, 10, 50, 20,
 		{ 192, 192, 192, 255 },
 		{ 128, 128, 128, 255 },
-		{ 64, 64, 64, 255 });
+		{ 64, 64, 64, 255 }))
+		SDL_ShowWindowSystemMenu(window, 10, 10);
 
-	game.ui.Button(1, "Help", buttonFont, { 0, 0, 0, 255 }, renderer, 70, 10, 50, 20,
+	if (game.ui.Button(1, "Game", buttonFont, { 0, 0, 0, 255 }, renderer, 70, 10, 50, 20,
 		{ 192, 192, 192, 255 },
 		{ 128, 128, 128, 255 },
-		{ 64, 64, 64, 255 });
+		{ 64, 64, 64, 255 }))
+		SDL_ShowSimpleMessageBox(
+			SDL_MESSAGEBOX_INFORMATION,
+			"Game",
+			"Here you can set mine count.",
+			NULL
+		);
+		
+
+	if (game.ui.Button(2, "Help", buttonFont, { 0, 0, 0, 255 }, renderer, 130, 10, 50, 20,
+		{ 192, 192, 192, 255 },
+		{ 128, 128, 128, 255 },
+		{ 64, 64, 64, 255 }))
+	{
+		SDL_ShowSimpleMessageBox(
+			SDL_MESSAGEBOX_INFORMATION,
+			"Help",
+			"Left click to open a cell.\nRight click to place a flag.\n\nIf you open a mine, you lose.\nIf you place all flags correctly, you win.",
+			NULL
+		);
+	}
 
 	game.ui.DrawPanelOld(renderer, 10, 40, 480, 70);
 
