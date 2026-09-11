@@ -3,4 +3,4 @@
 <p><a href="https://discord.gg/m7qWUgRGK7"><img src="https://img.itch.zone/aW1nLzI5ODU2MzQ2LmpwZw==/original/%2BbDvmj.jpg" alt="Мой Discord" title="Мой Discord"></a>&nbsp; <a href="https://t.me/Deadly_Place"><img src="https://img.itch.zone/aW1nLzI5ODU2MzczLmpwZw==/original/tDElxP.jpg" alt="Мой Telegram" title="Мой Telegram"></a></p>
 <a href="https://dpsturdio.itch.io/minesweeper-by-dpstudio" style="font-family: Roboto;">Play Game On itch.io</a>
 <br>
-[Minesweeper — сапёр игра на C++ (OpenSource)](https://youtu.be/3nYnHVMLELs)
+<a href="https://www.youtube.com/watch?v=3nYnHVMLELs" style="font-family: Roboto;">Minesweeper — сапёр игра на C++ (OpenSource)</a>
